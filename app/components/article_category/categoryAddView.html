@@ -1,0 +1,57 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Thêm mới danh mục
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="categories">Danh sách</a></li>
+        <li class="active">Thêm mới</li>
+    </ol>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Thêm mới  danh mục</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmAddCategory" role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tên danh mục</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="name" placeholder="Tên danh mục" ng-model="category.name">
+                        <span ng-show="frmAddCategory.name.$invalid" class="has-error">Nhập tên danh mục bài viết</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Mô tả</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="description" placeholder="Mô tả" ng-model="category.description">
+                        <span ng-show="frmAddCategory.description.$invalid" class="has-error">Nhập mô tả danh mục bài viết</span>
+                    </div>
+                </div>
+
+                
+            </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button class="btn btn-default" ui-sref="categories">Hủy</button>
+                <button type="submit" ng-disabled="frmAddCategory.$invalid" class="btn btn-info pull-right" ng-click="addCategory()">Thêm mới</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->

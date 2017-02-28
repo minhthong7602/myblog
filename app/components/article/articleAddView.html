@@ -1,0 +1,107 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Thêm mới bài viết
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="articles">Danh sách</a></li>
+        <li class="active">Thêm mới</li>
+    </ol>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Thêm mới  bài viết</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmAddArticle" role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tên bài viết</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-change="changeSeo()" required name="name" placeholder="Tên bài viết" ng-model="article.name">
+                        <span ng-show="frmAddArticle.name.$invalid" class="has-error">Nhập tên danh mục bài viết</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tiêu đề bài viết</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="title" placeholder="Tên danh mục" ng-model="article.title">
+                        <span ng-show="frmAddArticle.title.$invalid" class="has-error">Nhập tiêu đề bài viết</span>
+                    </div>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tiêu đề Seo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="article_seo" placeholder="Tên danh mục" ng-model="article.article_seo">
+                        <span ng-show="frmAddArticle.article_seo.$invalid" class="has-error">Nhập tiêu đề seo bài viết</span>
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Thể loại bài viết</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="category" ng-model="article.category" ng-options="option._id as option.name for option in categories"></select>
+                        <input type="hidden" name="category" ng-model="article.category" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Mô tả</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required name="description" placeholder="Mô tả" ng-model="article.description">
+                        <span ng-show="frmAddArticle.description.$invalid" class="has-error">Nhập mô tả danh mục bài viết</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ckeDetail_1"  class="col-sm-2 control-label">Nội dung bài viết</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" rows="20" cols="80" ckeditor ="ckeditorOptions" ng-model="article.content"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                     <label for="ckeDetail_1"  class="col-sm-2 control-label">Trạng thái</label>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="status" ng-model="article.status" ng-checked="article.status"> Hiển thị
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="home_article" ng-model="article.home_article" ng-checked="article.home_article"> Bài viết giới thiệu
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button class="btn btn-default" ui-sref="articles">Hủy</button>
+                <button type="submit" ng-disabled="frmAddArticle.$invalid" class="btn btn-info pull-right" ng-click="addArticle()">Thêm mới</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+      
+    <!-- /.box -->
+</section>
+<!-- /.content -->

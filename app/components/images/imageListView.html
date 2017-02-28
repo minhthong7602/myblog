@@ -1,0 +1,78 @@
+
+<section class="content-header">
+    <h1>
+        Danh sách hình ảnh
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="images">Danh hình ảnh</a></li>
+        <li class="active">Danh sách</li>
+    </ol>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box" >
+        <div class="box-header with-border">
+            <h3 class="box-title">Hình ảnh</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-change="search()"  placeholder="Tìm kiếm theo tên hình ảnh ..." ng-model="keyword" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" ng-click="search()" type="button" ">Tìm kiếm</button>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" ng-click="uploadFile()">Thêm mới</button>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <td colspan="6"><input type="number" ng-change="getImages(page)" ng-max="pagesCount" ng-min="minPage" ng-model="page" /> <span class="pull-right">Trang: {{page}} / {{pagesCount}} - Tổng số bản ghi {{TotalCount}}</span></td>
+                        </tr> 
+
+                        <tr>
+                            <th style="width: 10%">Tên</th>                    
+                            <th style="width: 20%">Đường dẫn</th>
+                            <th style="width: 10%">Kích thước</th>
+                             <th style="width: 10%">Ngày tạo</th>
+                            <th style="width: 20%">Hình ảnh</th>
+                            <th style="width: 30%">Thao tác</th>
+                        </tr>
+                        
+                        <tr ng-repeat="image in images | orderBy : '-time'">
+                            <td>{{image.name}}</td>
+                            <td>{{image.path}}</td>
+                            <td><img width="50" height="50" src='/public/images/{{image.name}}'></td>
+                            <td>{{image.size}}</td>
+                            <td>{{image.time | date : 'dd/MM/yyyy HH:mm:ss'}}</td>
+                            <td>
+                                <button ng-click="downloadImage(image.name)" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span></button>
+                                <span>  </span>
+                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->

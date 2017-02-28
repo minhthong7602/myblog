@@ -1,0 +1,175 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>ThongTM's Blog | Programing</title>
+<link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<script src="web/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Konstructs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body ng-app="home">
+	<!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a ui-sref="home"><h1>ThongTM'Blog</h1></a>
+			</div>
+			<div class="pages">
+			
+			</div>
+			<div class="navigation">
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a class="active" href="web/contact.html">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="header-bottom">
+            <div class="type">
+				<h5>Article Types</h5>
+			</div>
+			<span class="menu"></span>
+			<div class="list-nav">
+				<ul>                                                                 
+					<li><a ui-sref="cshaphome({id:'58a8802bda100509504bfa75'})">C#</a></li>|
+					<li><a ui-sref="angularjshome({id:'58a881deda100509504bfa77'})">Angular Js</a></li>|
+					<li><a ui-sref="nodejshome({id:'58a872459b531426dcb8ba77'})">Node Js</a></li>|
+					<li><a ui-sref="javascripthome({id:'58a88159da100509504bfa76'})">Javascript</a></li>|
+					<li><a ui-sref="cshaphome({id:'58a8802bda100509504bfa75'})">ASP.Net</a></li>|
+					<li><a ui-sref="about({id:'58a881deda100509504bfa77'})">About</a></li>
+				</ul>
+			</div>
+			<!-- script for menu -->
+				<script>
+				$( "span.menu" ).click(function() {
+				  $( ".list-nav" ).slideToggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
+			</script>
+			<!-- script for menu -->
+
+			<div class="clearfix"></div>
+        </div>
+	</div>
+	<div ui-view> </div>
+	<div class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="col-md-3 footer-links">
+					<h4>Other pages and things</h4>
+					<a href="#">Design a creative Blog</a>
+					<a href="#">Design a iPad Website</a>
+					<a href="#">Single Page sales portfolio </a>
+					<a href="#">Flat product website in Photoshop</a>
+					<a href="#">Design a creative Blog</a>
+					<a href="#">Design a iPad Website</a>
+					<a href="#">Single Page sales portfolio </a>
+					<a href="#">Flat product website</a>
+				</div>
+				<div class="col-md-3 footer-links span_66">
+					<a href="#">Flat product website in Photoshop</a>
+					<a href="#">Design a creative Blog</a>
+					<a href="#">Design a iPad Website </a>
+				</div>
+				<div class="col-md-3 footer-links">
+					<h4>Relevant Articles</h4>
+					<a href="#">Design a creative Blog</a>
+					<a href="#">Design a iPad Website</a>
+					<a href="#">Single Page sales portfolio </a>
+					<a href="#">Flat product website</a>
+					<a href="#">Design a creative Blog</a>
+				</div>
+				<div class="col-md-3 footer-links">
+					<h4>Other pages and things</h4>
+					<a href="#">Blaz Robar</a>
+					<a href="#">Nick Toranto</a>
+					<a href="#">Joisp Kelava</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="copyrights">
+					<p>Konstructs © 2015 All rights reserved | Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <!-- jQuery 2.2.3 -->
+    <script src="Assets/Admin/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="Assets/Admin/libs/bootbox/bootbox.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="Assets/Admin/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--CKeditor-->
+    <script src="Assets/Admin/libs/ckeditor/ckeditor.js"></script>
+    <!--CKFinder-->
+    <script src="Assets/Admin/libs/ckfinder/ckfinder.js"></script>
+    <!-- SlimScroll -->
+    <script src="Assets/Admin/libs/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="Assets/Admin/libs/fastclick/lib/fastclick.js"></script>
+	
+    <!-- Embed AngularJS -->
+    <script src="Assets/Admin/libs/angular/angular.js"></script>
+    <script src="Assets/Admin/libs/toastr/toastr.js"></script>
+    <script src="Assets/Admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="Assets/Admin/libs/ngBootbox/ngBootbox.js"></script>
+    <!-- Pagination -->
+    <script src="Assets/Admin/libs/angular-utils-pagination/dirPagination.js"></script>
+    <!-- Loading Bar-->
+    <script src="Assets/Admin/libs/angular-loading-bar/build/loading-bar.js"></script>
+    <!--Local-storage-->
+    <script src="Assets/Admin/libs/angular-local-storage/dist/angular-local-storage.js"></script>
+    <!--ngckeditor-->
+    <script src="Assets/Admin/libs/ng-ckeditor/ng-ckeditor.js"></script>
+	
+	<!-- Angular-recaptchar -->
+	<script type="text/javascript" src="Assets/Admin/libs/angular-recaptcha/release/angular-recaptcha.js"></script>
+
+	<!--Common-->
+	<script src="app/shared/modules/blog.common.js"></script>
+	
+    <script src="/app/shared/diractive/diractivecustom.js"></script>
+    <!--Service-->
+    <script src="/app/shared/services/apiService.js"></script>
+    <script src="/app/shared/services/notificationService.js"></script>
+    <script src="/app/shared/services/commonService.js"></script>
+
+	<!--Module-->
+	<script src="app/components/nodejs/nodejshome.module.js"></script>
+	<script src="app/components/javascript/javascripthome.module.js"></script>
+	<script src="app/components/angularjs/angularhome.module.js"></script>
+	<script src="app/components/cshap/cshaphome.module.js"></script>
+	<script src="app/components/about/about.module.js"></script>
+	<script src="app/components/article-home/articlehome.module.js"></script>
+
+    <script src="app/home.js"></script>
+	<!--Controller-->
+	<script src="app/components/home/homeController.js"></script>
+	<script src="app/components/nodejs/nodejsHomeController.js"></script>
+	<script src="app/components/cshap/cshapHomeController.js"></script>
+	<script src="app/components/angularjs/angularHomeController.js"></script>
+	<script src="app/components/javascript/javascriptHomeController.js"></script>
+	<script src="app/components/about/aboutController.js"></script>
+	<script src="app/components/article-home/articledetailController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="container">
+		<div class="content">
+			<div class="col-md-8 printing-content">
+				<div class="print-main">
+					<h3>Node Js</h3>
+					<p class="sub_head">Đăng bởi <a href="#"> Admin</a> {{article_home.created_at | date : 'HH:mm:ss dd/MM/yyyy'}}</p>
+					<span ng-bind-html='toTrustedHTML(article_home.content)'></span>				
+				</div>			
+			</div>
+			<div class="col-md-4 content-right">
+			<div class="content-right-top">
+				<h5 class="head">Bài viết</h5>	
+				<div ng-repeat="item in articles">
+                  <a ui-sref="article-detail({seo:item.article_seo})">
+					<div class="editor text-center">
+						<h3>{{item.name}}</h3>
+						<p>{{item.title}}</p>
+						<label>{{item.created_at | date : 'dd/MM/yyyy HH:mm:ss'}}</label>
+						<span></span>
+					</div>
+				  </a>
+				</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>			
+		</div>
+	</div>

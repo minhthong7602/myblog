@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="content">
+        <div class="single-page">
+            <span ng-bind-html='toTrustedHTML(article.content)'></span>
+
+        </div>
+        <div class="col-md-7 single-content-left">
+            <div class="single">
+                <div class="leave">
+                    <h4>Bình luận của bạn về bài viết</h4>
+                </div>
+                <form id="commentform" novalidate name="frmAddComment" role="form" ng-submit="submit()">
+                    <p class="comment-form-author-name"><label for="author">Tên</label>
+                        <input id="author" name="name" required ng-model="comment.name" type="text" value="" size="30" aria-required="true">
+                         <span ng-show="frmAddComment.name.$invalid" class="has-error">Nhập tên</span>
+                    </p>
+                    <br />
+                    <p class="comment-form-email">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" required ng-model="comment.email" type="email" value="" size="30" aria-required="true">
+                        <br />
+                        <span ng-show="frmAddComment.email.$invalid" class="has-error">Nhập email</span>
+                        <br />
+                        <span ng-show="frmAddComment.email.$error.email">Không phải email!</span>
+                    </p>
+                    <br />
+                    <p class="comment-form-comment">
+                        <label for="comment">Nội dung</label>
+                        <textarea name="content" ng-model="comment.content" required></textarea>
+                        <span ng-show="frmAddComment.content.$invalid" class="has-error">Nhập bình luận</span>
+                    </p>
+                    <br />
+                    <div
+                       vc-recaptcha
+                       theme="'light'"
+                       key="model.key"
+                       on-create="setWidgetId(widgetId)"
+                       on-success="setResponse(response)"
+                       on-expire="cbExpiration()"></div>
+                    <div class="clearfix"></div>
+                    <p class="form-submit">
+                        <input name="submit" ng-disabled="frmAddComment.$invalid" type="submit" id="submit" value="Send">
+                    </p>
+                    <div class="clearfix"></div>
+                </form>
+                <div class="comments1">
+                    <h4>Các bình luận bài viết</h4>
+                    <div class="comments-main" ng-repeat="cm in comments">
+                        <div class="col-md-12 cmts-main-right">
+                            <h5>{{cm.name}}</h5>
+                            <p>{{cm.content}}</p>
+                            <div class="cmts">
+                                <div class="col-md-6 cmnts-left">
+                                    <p>{{cm.created_at | date : 'HH:mm:ss dd/MM/yyyy'}}</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 content-right content-right-top">
+            <h5 class="head">Các bài viết</h5>	
+				<div ng-repeat="item in articles">
+                  <a ui-sref="article-detail({seo:item.article_seo})">
+					<div class="editor text-center">
+						<h3>{{item.name}}</h3>
+						<p>{{item.title}}</p>
+						<label>{{item.created_at | date : 'dd/MM/yyyy HH:mm:ss'}}</label>
+						<span></span>
+					</div>
+				  </a>
+			   </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿.btn-register {
+    background: #F97E76;
+    color: #FFF;
+    font-size: 1em;
+    padding: 0.8em 2em;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+}
+
+.error {
+    color : red;
+    font-size:14px;
+}

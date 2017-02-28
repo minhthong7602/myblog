@@ -1,0 +1,76 @@
+
+<section class="content-header">
+    <h1>
+        Danh sách chủ đề
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="categories">Danh sách chủ để</a></li>
+        <li class="active">Danh sách</li>
+    </ol>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Sản phẩm</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-change="getCategories()" placeholder="Tìm kiếm theo tên chủ đề ..." ng-model="keyword" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" ">Tìm kiếm</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" ui-sref="category-add">Thêm mới</button>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                       
+                        <tr>
+                            <th style="width: 20%">Id</th>
+                            <th style="width: 20%">Tên</th>                    
+                            <th style="width: 20%">Mô tả</th>
+                            <th style="width: 20%">Ngày tạo</th>
+                            <th style="width: 20%">Thao tác</th>
+                        </tr>
+                   
+                        <tr ng-repeat="category in categories">
+                            <td>{{category._id}}</td>
+                            <td>{{category.name}}</td>
+                            <td>{{category.description}}</td>
+                            <td>{{category.created_at | date : "dd/MM/yyyy HH:mm:ss"}}</td>
+                            <td>
+                                <button class="btn btn-primary" ui-sref="category-edit({id:category._id})" "><i class="fa fa-pencil"></i></button>
+                                <span>  </span>
+                                <button class="btn btn-danger" "><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span class="pull-right">Tổng số bản ghi {{TotalCount}}</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->

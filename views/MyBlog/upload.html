@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>File upload NodeJs </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2>Upload file</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        <form action="/file/upload" method="POST" id="uploadForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                             <label for="file">File input</label>
+                             <input type="file" class="form-control-file" name="file" id="file">
+                             <br />
+                             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-open"></span> Upload</button>
+                        </div>
+                        </form>
+                         <span id="status"></span>
+                         <div id="img"></div>
+                         </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   
+    <script>
+        $(document).ready(function () {
+
+            $('#uploadForm').submit(function () {
+                $("#status").empty().text("File is uploading...");
+
+                $(this).ajaxSubmit({
+
+                    error: function (xhr) {
+                        status('Error: ' + xhr.status);
+                    },
+
+                    success: function (response) {
+                        console.log(response)
+                        $("#status").empty().text(`Đường dẫn file /public/images/${response}`);
+                        $("#img").html('<img src="/public/images/' + response + '" />');
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
